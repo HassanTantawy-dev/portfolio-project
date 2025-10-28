@@ -6,7 +6,7 @@ body{
     background-color: #10011e;
     background-image: url(./image/Gradient.png);
     background-repeat: no-repeat;
-    background-position: 380px 30px;
+    background-position: 50% 0%;
 }
 body::selection{
     background-color: #763CAC;
