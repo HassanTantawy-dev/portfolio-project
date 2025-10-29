@@ -58,7 +58,7 @@ h1{
     height: 189px;
     display: flex;
     background-color: #19042d;
-    border-top: #763CAC;
+    border-top: #763CAC solid 5px;
 }
 .left{
     width: 50%;
@@ -89,6 +89,7 @@ span{
     color: white;
     background-color: #480a82;
     border-radius: 10px;
+    border: #763CAC solid;
 }
 .btn:hover{
     background-color: #2f0853;
@@ -98,7 +99,7 @@ span{
     height: 189px;
     display: flex;
     background-color: #19042d;
-    border-top: #763CAC;
+    border-top: #763CAC solid 5px;
 }
 .left-2{
     width: 50%;
