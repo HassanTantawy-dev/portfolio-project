@@ -9,7 +9,7 @@ body{
     background-position: 50% 0%;
 }
 body::selection{
-    background-color: #763CAC;
+    background-color: #480a82;
     color: white;
 }
 /* nav */
