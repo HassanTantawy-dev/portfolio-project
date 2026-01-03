@@ -206,10 +206,10 @@ span{
     left: 380px;
 }
 .margin{
-    margin-left: 240px;
+    direction: rtl;
 }
 .margin-1{
-    margin-left: 365px;
+    direction: rtl;
 }
 /* section-7 */
 .section-7{
