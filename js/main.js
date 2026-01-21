@@ -1,5 +1,5 @@
 document.getElementById("demo").addEventListener('click', function() {
-    document.body.style.backgroundColor = "rgb(129, 233, 115)";
+    document.body.style.backgroundColor = "rgb(7, 8, 7)";
 });
 
 document.getElementById("demo").addEventListener('dblclick', function() {

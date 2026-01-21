@@ -8,6 +8,7 @@
     width: 100%;
     top: 0;
     left: 0;
+    padding: 10px 0px;
     z-index: 99999;
 }
 
@@ -29,6 +30,9 @@ nav .links a{
 nav .links{
     display: flex;
     justify-content: end;
+}
+.About{
+    margin-top: 90px;
 }
 
 .About h2{
