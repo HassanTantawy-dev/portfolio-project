@@ -10,7 +10,7 @@ nav {
 }
 .image-contain img{
     object-fit: contain;
-    filter: drop-shadow(0 4px 20px rgba(65, 158, 245, 0.922));
+    filter: drop-shadow(0 4px 20px rgba(28, 29, 31, 0.922));
 }
 
 nav .links a{
@@ -25,7 +25,7 @@ nav .links{
 }
 
 .About h2{
-    color: #0077b5;
+    color: #16a0eb;
 }
 .icon a{
     padding: 10px;
@@ -88,6 +88,7 @@ nav .links{
     }
 }
 /* end about img  */
+
 /* start skills section */
 
 
@@ -115,10 +116,8 @@ nav .links{
     }
 }
 /* end skills section */
+
 /* start project section */
-
-
-
 span{
     background-color: #eee;
     padding: 2px 3px;
@@ -134,8 +133,9 @@ span{
     transition: 0.3s ease;
 }
 .project-section{
-    background-color: rgb(240, 238, 238);
+    background-color: rgb(250, 252, 253);
     padding: 50px 0px;
+    border-radius: 18px;
     width: 80%;
     margin: auto;
 }
