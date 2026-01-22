@@ -3,21 +3,21 @@
     padding: 0;
 }
 
-.navbar{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 99999;
-}
 
 nav {
     background-color: rgb(236, 236, 236);
     box-shadow: 0 3px 6px #b1afaf;
 }
+.navbar{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
 .image-contain img{
     object-fit: contain;
-    filter: drop-shadow(0 4px 20px rgba(28, 29, 31, 0.922));
+    filter: drop-shadow(0 4px 20px rgba(65, 158, 245, 0.922));
 }
 
 nav .links a{
@@ -32,7 +32,7 @@ nav .links{
 }
 
 .About h2{
-    color: #16a0eb;
+    color: #0077b5;
 }
 .icon a{
     padding: 10px;
@@ -95,7 +95,6 @@ nav .links{
     }
 }
 /* end about img  */
-
 /* start skills section */
 
 
@@ -123,8 +122,10 @@ nav .links{
     }
 }
 /* end skills section */
-
 /* start project section */
+
+
+
 span{
     background-color: #eee;
     padding: 2px 3px;
@@ -133,6 +134,7 @@ span{
 }
 .card-1{
     background-color: white;
+    border-radius: 10px;
 }
 .card-1:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -140,9 +142,8 @@ span{
     transition: 0.3s ease;
 }
 .project-section{
-    background-color: rgb(250, 252, 253);
+    background-color: rgb(240, 238, 238);
     padding: 50px 0px;
-    border-radius: 18px;
     width: 80%;
     margin: auto;
 }
@@ -154,4 +155,44 @@ span{
 /* end project section */
 
 
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-mode nav {
+    background-color: #1e1e1e;
+    box-shadow: 0 3px 6px #000;
+}
+
+body.dark-mode nav .links a,
+body.dark-mode .navbar-brand {
+    color: #f1f1f1;
+}
+
+body.dark-mode .card,
+body.dark-mode .card-1 {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+
+body.dark-mode .project-section {
+    background-color: #181818;
+}
+
+body.dark-mode span {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode footer,
+body.dark-mode .footer-section {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body.dark-mode .icon a {
+    color: #f1f1f1;
+}
 

@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- icon   -->
-    <link rel="icon" href="img/printer-front-side-with-white-background.jpg" type="image/x-icon" />
     <!-- Font awesome -->
     <link rel="stylesheet" href="css/all.min.css" />
     <!-- bootstrap file -->
@@ -13,26 +11,29 @@
     <!-- animate css file -->
     <link rel="stylesheet" href="css/animate.min.css">
     <!-- style file -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style2.css" />
     <title>Protofolie</title>
 </head>
 
- <body>
+<body>
     <!-- start nav section  -->
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand font-weight-bold" href="#">Hassan Ibrahhim</a>
+            <a class="navbar-brand" href="#">Hassan Tantawy</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse m-2 links" id="navbarSupportedContent">
-                <a href="#">About</a>
+                <a href="#about">About</a>
                 <a href="#project">Project</a>
                 <a href="#footer">Content</a>
-                <button class="btn btn-outline-primary" id="demo">Dark</button>
+                <button id="darkModeToggle" class="btn btn-outline-dark">
+                    🌙
+                </button>
+
             </div>
         </div>
     </nav>
@@ -41,11 +42,11 @@
 
     <!-- start about section  -->
 
-    <main class="About">
+    <main class="About" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mt-5">
-                    <h2 class="p-2">Hassan Hammam</h2>
+                    <h2 class="p-2">Hassan Tantawy</h2>
                     <h4 class="p-2">I am Software Engineer || Frontend developer</h4>
                     <p class="p-2">
                         I am currently learning about Frontend technologies.<br />
@@ -53,16 +54,17 @@
                         creative solutions.
                     </p>
                     <div class="icon">
-                        <a href="https://www.linkedin.com/in/hassan-hammam-159981334"><i
+                        <a
+                            href="https://www.linkedin.com/in/hassan-tantawy-39ab27363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i
                                 class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/hassan4366"><i class="fa-brands fa-github"></i></a>
-                        <a href="mailto:hassanhammam436@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                        <a href="https://drive.google.com/drive/folders/1VbsEDiRlM1CSTiMTeAomRnd7pxdHi1L-"><i
+                        <a href="https://github.com/HassanTantawy-dev"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:hassantantawy2727@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="img/Hassan_Mohamed Tantawy_Software Engineer_resume.pdf"><i
                                 class="fa-solid fa-file"></i></a>
                     </div>
                 </div>
                 <div class="col-md-4 image-contain">
-                    <img src="img/6012815839603657612.jpg" alt="my Image" class="mt-5" />
+                    <img src="img/WhatsApp Image 2026-01-21 at 4.30.54 PM.jpeg" alt="my Image" class="mt-5" />
                 </div>
             </div>
         </div>
@@ -121,18 +123,6 @@
                             <h4 class="card-text text-center">React</h4>
                         </div>
                     </div>
-                    <div class="col-md-3 m-lg-2 card wow fadeInRightBig" style="width: 18rem;">
-                        <img src="img/database.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h4 class="card-text text-center">SQL</h4>
-                        </div>
-                    </div>
-                    <div class="col-md-3 m-lg-2 card wow fadeInRightBig" style="width: 18rem;">
-                        <img src="img/database (1).png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h4 class="card-text text-center">DataBase</h4>
-                        </div>
-                    </div>
                     <div class="col-md-3 m-lg-2 card wow fadeInLeftBig" style="width: 18rem;">
                         <img src="img/problem-solving.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -143,12 +133,6 @@
                         <img src="img/c-.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h4 class="card-text text-center">C++</h4>
-                        </div>
-                    </div>
-                    <div class="col-md-3 m-lg-2 card wow fadeInLeftBig" style="width: 18rem;">
-                        <img src="img/python.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h4 class="card-text text-center">Python</h4>
                         </div>
                     </div>
                 </div>
@@ -168,47 +152,44 @@
                     <h2 class="text-center mb-5">Projects</h2>
                 </div>
                 <div class="col-md-12 d-flex justify-content-between flex-wrap mt-5">
-
                     <div class="card-1" style="width: 18rem;">
-                        <img src="img/E-Commerce Facebook Ad 1.png" class="card-img-top" alt="...">
+                        <a href="https://github.com/HassanTantawy-dev/E-Commerce"><img
+                                src="img/E-Commerce Facebook Ad 1.png" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                             <h4>E-Commerce</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <p class="card-text">A clean and responsive e-commerce website focused on usability and
+                                performance.</p>
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
                             <span>Bootstrap</span>
                         </div>
                     </div>
-
                     <div class="card-1" style="width: 18rem;">
-                        <img src="img/photo_2026-01-20_22-07-47.jpg" class="card-img-top" alt="...">
+                        <a href="https://github.com/HassanTantawy-dev/Landing-page"><img src="img/Image.png"
+                                class="card-img-top" alt="..."></a>
                         <div class="card-body">
-                            <h4>Food Website</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <span>HTML</span>
-                            <span>JavaScript</span>
-                            <span>Tailwind</span>
-                            <span>React</span>
-                        </div>
-                    </div>
-
-                    <div class="card-1" style="width: 18rem;">
-                        <img src="img/Purple_and_White_Simple_Financial_Performance_Dashboard_Whiteboard.png"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h4>Dashboard Analytics</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h4>Landing Page</h4>
+                            <p class="card-text">Created a simple and visually appealing landing page using HTML, CSS,
+                                and JavaScript.</p>
                             <span>HTML</span>
                             <span>CSS</span>
-                            <span>Responsive Design</span>
+                            <span>JavaScript</span>
                         </div>
                     </div>
-
+                    <div class="card-1" style="width: 18rem;">
+                        <a href="https://github.com/HassanTantawy-dev/Sign-in-project"><img
+                                src="img/Screenshot 2025-09-24 031150.png" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <h4>Sign In Page</h4>
+                            <p class="card-text">Designed a simple sign-in page using HTML and CSS with a clean
+                                structure.</p>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -232,7 +213,8 @@
                     <label for="exampleInputPassword1">Name</label>
                     <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Your Name">
                     <label for="exampleFormControlTextarea1">Your Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Leave a comment"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="Leave a comment"></textarea>
                     <button type="submit" class="btn btn-primary mt-3">Send Message</button>
                 </form>
             </div>
@@ -245,15 +227,14 @@
         <div class="container bg-secondary text-white mt-5">
             <div class="row">
                 <div class="col-md-12 text-center py-3">
-                    <p class="">&copy; 2026 Hassan Hammam. All rights reserved.</p>
+                    <p class="">&copy; 2024 Hassan Tantawy. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- End footer section  -->
-    <!-- main js file -->
-    <script src="js/main.js"></script>
+
     <!-- bootstrap js -->
     <script src="js/jquery.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -262,6 +243,11 @@
     <script src="js/all.min.js"></script>
     <!-- wow js -->
     <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!-- main js file -->
+    <script src="js/main2.js"></script>
 </body>
 
 </html>
