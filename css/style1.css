@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+nav {
+    background-color: rgb(236, 236, 236);
+    box-shadow: 0 3px 6px #b1afaf;
+}
+.image-contain img{
+    object-fit: contain;
+    filter: drop-shadow(0 4px 20px rgba(28, 29, 31, 0.922));
+}
+
+nav .links a{
+    padding: 9px;
+    text-decoration: none;
+    color: black;
+}
+
+nav .links{
+    display: flex;
+    justify-content: end;
+}
+
+.About h2{
+    color: #16a0eb;
+}
+.icon a{
+    padding: 10px;
+    color: black;
+    font-size: 25px ;
+    transition: 0.2s ease;
+} 
+
+.icon a:nth-child(1):hover {
+    border-radius: 50%;
+    color: white;
+    background-color: #0077b5;
+}
+
+.icon a:nth-child(2):hover {
+    border-radius: 50%;
+    background-color: rgb(223, 219, 219);
+}
+
+.icon a:nth-child(3):hover {
+    border-radius: 50%;
+    color: white;
+    background-color: #ea4335;
+}
+
+.icon a:nth-child(4):hover {
+    border-radius: 50%;
+    color: white;
+    background-color: #34a853;
+}
+
+/* section About  */
+@media (max-width: 576px) {
+    .About{
+        text-align: center;
+    }
+    .About p{
+        font-size: 14px;
+    }
+}
+
+
+.About .image-contain img{
+    width: 350px;
+    height: 350px;
+    object-fit: contain;
+}
+
+/* about img  */
+@media (max-width: 576px){
+    .About .image-contain img{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .About .image-contain img{
+        width: 80%;
+        height: 80%;
+    }
+}
+/* end about img  */
+
+/* start skills section */
+
+
+.card{
+    background-color: rgb(240, 238, 238);
+    border-radius: 10px;
+}
+.card img{
+    width: 50px;
+    height: 50;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+}
+.card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+@media (max-width: 576px){
+    .card{
+        margin: 0 auto 20px;
+        
+    }
+}
+/* end skills section */
+
+/* start project section */
+span{
+    background-color: #eee;
+    padding: 2px 3px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+.card-1{
+    background-color: white;
+}
+.card-1:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+.project-section{
+    background-color: rgb(250, 252, 253);
+    padding: 50px 0px;
+    border-radius: 18px;
+    width: 80%;
+    margin: auto;
+}
+@media(max-width: 576px){
+    .card-1{
+        margin-bottom: 40px;
+    }
+}
+/* end project section */
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-mode nav {
+    background-color: #1e1e1e;
+    box-shadow: 0 3px 6px #000;
+}
+
+body.dark-mode nav .links a,
+body.dark-mode .navbar-brand {
+    color: #f1f1f1;
+}
+
+body.dark-mode .card,
+body.dark-mode .card-1 {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+
+body.dark-mode .project-section {
+    background-color: #181818;
+}
+
+body.dark-mode span {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode footer,
+body.dark-mode .footer-section {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body.dark-mode .icon a {
+    color: #f1f1f1;
+}
+
+
+
