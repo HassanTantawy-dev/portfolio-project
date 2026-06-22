@@ -12,7 +12,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     submitBtn.disabled = true;
 
     // إرسال البيانات فوراً باستخدام الـ IDs بتاعتك من الصور
-    emailjs.sendForm('service_4b3kedo', 'template_xm4mofv', this)
+    emailjs.sendForm('service_gvuoqca', 'template_xm4mofv', this)
         .then(() => {
             // إظهار رسالة النجاح الخضراء اللي في كود الـ HTML بتاعك
             if (successAlert) {
