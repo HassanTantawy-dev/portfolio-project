@@ -59,18 +59,11 @@
             line-height: 1;
         }
 
-        .theme-toggle i {
-            display: none !important;
-        }
-
-        .theme-toggle::before {
-            content: "\263E";
+        .theme-icon {
+            display: block;
             font-size: 22px;
+            font-weight: 700;
             line-height: 1;
-        }
-
-        body.dark-mode .theme-toggle::before {
-            content: "\2600";
         }
 
         .navbar-toggler {
@@ -120,7 +113,7 @@
             <div class="navbar-actions">
                 <button id="darkModeToggle" class="btn btn-outline-dark theme-toggle" type="button"
                     aria-label="Switch to dark mode" title="Toggle dark mode">
-                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    <span class="theme-icon" aria-hidden="true">☾</span>
                 </button>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse"

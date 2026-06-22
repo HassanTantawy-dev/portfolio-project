@@ -11,11 +11,10 @@ themeToggleBtns.forEach((button) => {
 
 function setThemeIcon(isDark) {
   themeToggleBtns.forEach((button) => {
-    const icon = button.querySelector("i");
+    const icon = button.querySelector(".theme-icon");
     if (!icon) return;
 
-    icon.classList.toggle("fa-moon", !isDark);
-    icon.classList.toggle("fa-sun", isDark);
+    icon.textContent = isDark ? "☀" : "☾";
     button.setAttribute(
       "aria-label",
       isDark ? "Switch to light mode" : "Switch to dark mode"
