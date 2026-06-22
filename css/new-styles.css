@@ -1,0 +1,279 @@
+/* Skills RTL Grid */
+.skills-rtl {
+    direction: rtl;
+    grid-auto-flow: dense;
+}
+
+/* Education Section */
+.education-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 60px 0;
+}
+
+.education-section h2 {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.education-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+.education-card h4 {
+    color: #667eea;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.education-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Experience Section */
+.experience-section {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    padding: 60px 0;
+}
+
+.experience-section h2 {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.experience-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #764ba2;
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+.experience-card h4 {
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.experience-card .company {
+    color: #764ba2;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.experience-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Services Section */
+.services-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.services-section h2 {
+    color: white;
+    font-weight: 700;
+    font-size: 2.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    z-index: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.service-card h3 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.service-card h4 {
+    color: #667eea;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.required {
+    color: #f5576c;
+    font-weight: bold;
+}
+
+.error-message {
+    color: #f5576c;
+    display: block;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.form-control.is-invalid {
+    border-color: #f5576c !important;
+}
+
+.form-control.is-valid {
+    border-color: #34a853 !important;
+}
+
+#successMessage {
+    background-color: #d4edda !important;
+    border: 2px solid #34a853 !important;
+    color: #155724 !important;
+    border-radius: 8px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+
+    .education-section h2,
+    .experience-section h2,
+    .services-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .service-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .education-card,
+    .experience-card {
+        border-left-width: 3px;
+        padding: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 2.5rem;
+    }
+
+    .service-card h4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Dark Mode for New Sections */
+body.dark-mode .education-section {
+    background: linear-gradient(135deg, #1a1f47 0%, #2d2448 100%);
+}
+
+body.dark-mode .education-section h2 {
+    color: #b8a3ff;
+}
+
+body.dark-mode .education-card {
+    background-color: #1e2345;
+    color: #e8e8e8;
+}
+
+body.dark-mode .education-card h4 {
+    color: #b8a3ff;
+}
+
+body.dark-mode .education-card p {
+    color: #b8b8b8;
+}
+
+body.dark-mode .experience-section {
+    background: linear-gradient(135deg, rgba(26, 31, 71, 0.5) 0%, rgba(45, 36, 72, 0.5) 100%);
+}
+
+body.dark-mode .experience-section h2 {
+    color: #b8a3ff;
+}
+
+body.dark-mode .experience-card {
+    background-color: #1e2345;
+    color: #e8e8e8;
+}
+
+body.dark-mode .experience-card h4 {
+    color: #e8e8e8;
+}
+
+body.dark-mode .experience-card .company {
+    color: #9d8ff5;
+}
+
+body.dark-mode .experience-card p {
+    color: #b8b8b8;
+}
+
+body.dark-mode .services-section {
+    background: linear-gradient(135deg, #1a1f47 0%, #2d2448 100%);
+}
+
+body.dark-mode .services-section h2 {
+    color: #b8a3ff;
+}
+
+body.dark-mode .service-card {
+    background-color: #1e2345;
+    color: #e8e8e8;
+}
+
+body.dark-mode .service-card h4 {
+    color: #b8a3ff;
+}
+
+body.dark-mode .service-card p {
+    color: #b8b8b8;
+}
