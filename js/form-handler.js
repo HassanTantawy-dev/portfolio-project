@@ -187,3 +187,35 @@ function handleFormSubmit(event) {
       submitBtn.textContent = originalText;
     });
 }
+// تفعيل الخدمة بمفتاحك العام (تجد الـ Public Key في إعدادات حسابك Account Settings داخل EmailJS)
+emailjs.init("YOUR_PUBLIC_KEY"); 
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // منع الصفحة من إعادة التحميل
+
+    const submitBtn = document.getElementById('submitBtn');
+    const successAlert = document.getElementById('successMessage'); // العنصر الموجود بكودك لإظهار النجاح
+
+    submitBtn.innerText = 'Sending...';
+    submitBtn.disabled = true;
+
+    // إرسال البيانات مباشرة من الفورم إلى EmailJS
+    // استبدل 'YOUR_SERVICE_ID' بالـ ID الخاص بخدمة الإيميل (Email Services)
+    // استبدل 'YOUR_TEMPLATE_ID' بالـ ID الخاص بالقالب (تجد الـ ID مكتوباً فوق اسم Contact Us في صفحة القوالب)
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(() => {
+            // إظهار رسالة النجاح الخضراء الموجودة في كود الـ HTML الخاص بك
+            if (successAlert) {
+                successAlert.classList.remove('d-none');
+                successAlert.innerText = 'Your message has been sent successfully!';
+            }
+            document.getElementById('contactForm').reset(); // تفريغ الحقول بعد الإرسال
+        }, (error) => {
+            console.error('Failed...', error);
+            alert('Something went wrong, please try again.');
+        })
+        .finally(() => {
+            submitBtn.innerText = 'Send Message';
+            submitBtn.disabled = false;
+        });
+});
