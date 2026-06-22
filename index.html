@@ -15,23 +15,30 @@
     <!-- new styles -->
     <link rel="stylesheet" href="css/new-styles.css?v=20260622-3" />
     <style>
-        .navbar .container {
-            display: flex;
+        nav.navbar .container {
+            display: grid !important;
+            grid-template-columns: minmax(0, 1fr) auto auto;
             align-items: center;
-            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .navbar-brand {
-            margin-right: auto;
+            grid-column: 1;
+            min-width: 0;
+            margin-right: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .navbar-actions {
-            display: flex !important;
+            grid-column: 2 / 4;
+            display: grid !important;
+            grid-template-columns: 44px 44px;
             align-items: center;
+            justify-content: end;
             gap: 8px;
-            margin-left: auto;
-            flex: 0 0 auto;
-            order: 2;
+            margin-left: 0;
         }
 
         .theme-toggle {
@@ -76,18 +83,27 @@
         }
 
         #navbarSupportedContent {
-            order: 3;
-            flex-basis: 100%;
+            grid-column: 1 / -1;
+            width: 100%;
+            margin: 10px 0 0 !important;
+            overflow: hidden;
         }
 
         @media (min-width: 992px) {
+            nav.navbar .container {
+                grid-template-columns: auto minmax(0, 1fr) auto;
+            }
+
             #navbarSupportedContent {
-                order: 1;
-                flex-basis: auto;
+                grid-column: 2;
+                width: auto;
+                margin: 0 !important;
+                overflow: visible;
             }
 
             .navbar-actions {
-                order: 2;
+                grid-column: 3;
+                grid-template-columns: 44px;
             }
         }
     </style>
@@ -114,7 +130,7 @@
                 </button>
             </div>
 
-            <div class="collapse navbar-collapse m-2 links" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse links" id="navbarSupportedContent">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#project">Projects</a>
