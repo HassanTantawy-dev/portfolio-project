@@ -188,17 +188,45 @@
         font-size: 1.8rem;
     }
 
+    .education-section,
+    .experience-section,
+    .services-section {
+        padding: 44px 0;
+    }
+
+    .education-card,
+    .experience-card {
+        margin-bottom: 18px;
+    }
+
     .service-card {
         margin-bottom: 20px;
     }
 }
 
 @media (max-width: 576px) {
+    .education-section,
+    .experience-section,
+    .services-section {
+        padding: 36px 0;
+    }
 
     .education-card,
     .experience-card {
         border-left-width: 3px;
         padding: 20px;
+        border-radius: 12px;
+    }
+
+    .education-card:hover,
+    .experience-card:hover,
+    .service-card:hover {
+        transform: none;
+    }
+
+    .service-card {
+        border-radius: 12px;
+        padding: 24px 18px;
     }
 
     .service-card h3 {

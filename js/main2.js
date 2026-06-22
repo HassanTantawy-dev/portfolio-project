@@ -1,43 +1,50 @@
 // Dark Mode Toggle
-const toggleBtn = document.getElementById("darkModeToggle");
+const themeToggleBtns = document.querySelectorAll(".theme-toggle");
 
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    // تغيير الأيقونة مع تأثير متقدم
-    if (document.body.classList.contains("dark-mode")) {
-      toggleBtn.innerText = "☀️";
-      localStorage.setItem("theme", "dark");
-      // تأثير الدوران والتكبير
-      toggleBtn.style.transform = "rotate(360deg) scale(1.2)";
-      setTimeout(() => {
-        toggleBtn.style.transform = "rotate(0deg) scale(1)";
-      }, 600);
-    } else {
-      toggleBtn.innerText = "🌙";
-      localStorage.setItem("theme", "light");
-      toggleBtn.style.transform = "rotate(-360deg) scale(1.2)";
-      setTimeout(() => {
-        toggleBtn.style.transform = "rotate(0deg) scale(1)";
-      }, 600);
+themeToggleBtns.forEach((button) => {
+  Array.from(button.childNodes).forEach((node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      node.remove();
     }
+  });
+});
+
+function setThemeIcon(isDark) {
+  themeToggleBtns.forEach((button) => {
+    const icon = button.querySelector("i");
+    if (!icon) return;
+
+    icon.classList.toggle("fa-moon", !isDark);
+    icon.classList.toggle("fa-sun", isDark);
+    button.setAttribute(
+      "aria-label",
+      isDark ? "Switch to light mode" : "Switch to dark mode"
+    );
   });
 }
 
-// حفظ الاختيار عند تحميل الصفحة
-window.addEventListener("DOMContentLoaded", () => {
-  if (toggleBtn) {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
-      toggleBtn.innerText = "☀️";
-    } else {
-      toggleBtn.innerText = "🌙";
-    }
-  }
+themeToggleBtns.forEach((button) => {
+  button.addEventListener("click", () => {
+    const isDark = !document.body.classList.contains("dark-mode");
+
+    document.body.classList.toggle("dark-mode", isDark);
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    setThemeIcon(isDark);
+
+    button.classList.remove("is-switching");
+    void button.offsetWidth;
+    button.classList.add("is-switching");
+  });
 });
 
-// معالجة إرسال رسالة التواصل (Legacy - for old form)
+window.addEventListener("DOMContentLoaded", () => {
+  const isDark = localStorage.getItem("theme") === "dark";
+
+  document.body.classList.toggle("dark-mode", isDark);
+  setThemeIcon(isDark);
+});
+
+// Legacy contact message handler.
 const oldMessageBtn = document.querySelector("#massege");
 if (oldMessageBtn) {
   oldMessageBtn.addEventListener("click", function (event) {
@@ -57,21 +64,20 @@ if (oldMessageBtn) {
 
     Swal.fire({
       icon: "success",
-      title: "Message Sent Successfully! ✨",
+      title: "Message Sent Successfully!",
       text: "Thank you for your message. I'll get back to you soon!",
       showConfirmButton: true,
       confirmButtonColor: "#667eea",
       timer: 2000,
     });
 
-    // مسح النموذج بعد الإرسال
     setTimeout(() => {
       form.reset();
     }, 500);
   });
 }
 
-// تأثير التمرير السلس (Smooth Scroll)
+// Smooth scroll for page links.
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -85,7 +91,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// إضافة تأثير الظهور عند التمرير
+// Reveal cards while scrolling.
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -100px 0px",
@@ -100,7 +106,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// مراقبة العناصر
 document.querySelectorAll(".skill-card, .project-card").forEach((el) => {
   el.style.opacity = "0";
   el.style.transform = "translateY(20px)";
