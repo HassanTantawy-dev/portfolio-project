@@ -76,12 +76,62 @@ nav.navbar .container {
 }
 
 .navbar-toggler {
+    position: relative;
     width: 44px;
     height: 44px;
     padding: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.22) !important;
+}
+
+.navbar-toggler .icon-bar {
+    position: absolute;
+    left: 11px;
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-toggler .top-bar {
+    top: 14px;
+}
+
+.navbar-toggler .middle-bar {
+    top: 21px;
+}
+
+.navbar-toggler .bottom-bar {
+    top: 28px;
+}
+
+/* Animations when expanded */
+.navbar-toggler:not(.collapsed) .top-bar {
+    top: 21px;
+    transform: rotate(135deg);
+}
+
+.navbar-toggler:not(.collapsed) .middle-bar {
+    opacity: 0;
+    transform: scale(0) translateX(-10px);
+}
+
+.navbar-toggler:not(.collapsed) .bottom-bar {
+    top: 21px;
+    transform: rotate(-135deg);
 }
 
 #navbarSupportedContent {
@@ -148,13 +198,7 @@ nav .links {
     margin-left: 10px;
 }
 
-.navbar-toggler {
-    border: none;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
+/* Custom navbar toggler bars styling handled above */
 
 .theme-toggle {
     background-color: rgba(255, 255, 255, 0.2) !important;
@@ -249,22 +293,7 @@ body.dark-mode .theme-toggle:hover {
         margin-left: 10px;
     }
 
-    .navbar-toggler {
-        width: 44px;
-        height: 44px;
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid rgba(255, 255, 255, 0.35);
-        border-radius: 8px;
-        margin-right: 10px;
-    }
-
-    .navbar-toggler:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.22);
-    }
+    /* Navbar toggler and focus is handled globally above */
 
     .theme-toggle {
         width: 44px;
@@ -296,6 +325,39 @@ body.dark-mode .theme-toggle:hover {
         align-items: center;
         justify-items: center;
         gap: 8px;
+        animation: slideDownMobileMenu 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        transform-origin: top center;
+    }
+
+    .navbar-collapse.links.show a {
+        animation: fadeInMobileLink 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .navbar-collapse.links.show a:nth-child(1) { animation-delay: 0.05s; }
+    .navbar-collapse.links.show a:nth-child(2) { animation-delay: 0.1s; }
+    .navbar-collapse.links.show a:nth-child(3) { animation-delay: 0.15s; }
+    .navbar-collapse.links.show a:nth-child(4) { animation-delay: 0.2s; }
+
+    @keyframes slideDownMobileMenu {
+        0% {
+            opacity: 0;
+            transform: translateY(-15px) scaleY(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scaleY(1);
+        }
+    }
+
+    @keyframes fadeInMobileLink {
+        0% {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     nav .links a {
