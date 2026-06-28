@@ -388,6 +388,7 @@ body.dark-mode .About .image-contain::before {
 /* 3. Name & Typography Upgrades */
 .About h2 {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     font-weight: 800 !important;
     display: inline-block;
@@ -395,6 +396,7 @@ body.dark-mode .About .image-contain::before {
 
 body.dark-mode .About h2 {
     background: linear-gradient(135deg, #b8a3ff 0%, #ec4899 100%);
+    -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
 
