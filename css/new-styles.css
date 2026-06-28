@@ -1,9 +1,3 @@
-/* Skills RTL Grid */
-.skills-rtl {
-    direction: rtl;
-    grid-auto-flow: dense;
-}
-
 /* Education Section */
 .education-section {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -304,4 +298,377 @@ body.dark-mode .service-card h4 {
 
 body.dark-mode .service-card p {
     color: #b8b8b8;
+}
+
+/* --- Hassan Portfolio Modern Polish & UX Upgrades --- */
+
+/* 1. Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f4f9;
+}
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #0f1224;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #5a6fd6 0%, #633b8f 100%);
+}
+
+/* 2. Hero Profile Image Blob and Smooth Float */
+.About .image-contain {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.About .image-contain img {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40% !important;
+    animation: profileBlob 12s ease-in-out infinite alternate, floatImage 4s ease-in-out infinite alternate !important;
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2) !important;
+    border: 3px solid rgba(255, 255, 255, 0.7) !important;
+    transition: all 0.4s ease-in-out !important;
+    object-fit: cover !important;
+    width: 300px !important;
+    height: 300px !important;
+}
+
+.About .image-contain img:hover {
+    transform: scale(1.03) rotate(2deg) !important;
+    box-shadow: 0 18px 40px rgba(102, 126, 234, 0.3) !important;
+}
+
+.About .image-contain::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0) 70%);
+    z-index: -1;
+    filter: blur(18px);
+    border-radius: 50%;
+}
+
+@keyframes profileBlob {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 45% 55% 50% 50% / 50% 45% 55% 50%;
+    }
+    100% {
+        border-radius: 30% 70% 70% 30% / 50% 60% 40% 50%;
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-12px);
+    }
+}
+
+body.dark-mode .About .image-contain img {
+    border-color: rgba(30, 35, 69, 0.8) !important;
+    box-shadow: 0 15px 35px rgba(184, 163, 255, 0.2) !important;
+}
+
+body.dark-mode .About .image-contain::before {
+    background: radial-gradient(circle, rgba(184, 163, 255, 0.2) 0%, rgba(118, 75, 162, 0) 70%);
+}
+
+/* 3. Name & Typography Upgrades */
+.About h2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 800 !important;
+    display: inline-block;
+}
+
+body.dark-mode .About h2 {
+    background: linear-gradient(135deg, #b8a3ff 0%, #ec4899 100%);
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* Subtitle Pill Style */
+.About h4 {
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+    color: #4b5563 !important;
+    line-height: 1.6 !important;
+}
+
+body.dark-mode .About h4 {
+    color: #d1d5db !important;
+}
+
+/* 4. Social Icons Glassmorphism Upgrades */
+.About .icon {
+    display: flex !important;
+    gap: 14px !important;
+    margin-top: 25px !important;
+    flex-wrap: wrap;
+}
+
+.About .icon a {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    font-size: 1.25rem !important;
+    color: white !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15) !important;
+}
+
+.About .icon a:hover {
+    transform: translateY(-6px) scale(1.1) rotate(6deg) !important;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35) !important;
+}
+
+body.dark-mode .About .icon a {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.About .icon a:nth-child(4):hover {
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4) !important;
+}
+
+/* 5. Modern Glassmorphic Tech-Tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px !important;
+    margin-top: 15px !important;
+}
+
+.tech-tags span {
+    background: rgba(102, 126, 234, 0.08) !important;
+    color: #667eea !important;
+    border: 1px solid rgba(102, 126, 234, 0.18) !important;
+    font-weight: 600 !important;
+    border-radius: 20px !important;
+    padding: 5px 12px !important;
+    font-size: 0.78rem !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    display: inline-block !important;
+    margin: 0 !important;
+}
+
+.tech-tags span:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 5px 12px rgba(102, 126, 234, 0.3) !important;
+    border-color: transparent !important;
+}
+
+body.dark-mode .tech-tags span {
+    background: rgba(184, 163, 255, 0.1) !important;
+    color: #b8a3ff !important;
+    border-color: rgba(184, 163, 255, 0.2) !important;
+}
+
+body.dark-mode .tech-tags span:hover {
+    background: linear-gradient(135deg, #b8a3ff 0%, #764ba2 100%) !important;
+    color: white !important;
+    box-shadow: 0 5px 12px rgba(184, 163, 255, 0.3) !important;
+}
+
+/* 6. Glowing & Interactive Card Refinements */
+.skill-card {
+    border: 1px solid rgba(102, 126, 234, 0.08) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04) !important;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.15) !important;
+    border-color: #667eea !important;
+}
+
+body.dark-mode .skill-card {
+    border-color: rgba(184, 163, 255, 0.05) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.dark-mode .skill-card:hover {
+    border-color: #b8a3ff !important;
+    box-shadow: 0 12px 30px rgba(184, 163, 255, 0.15) !important;
+}
+
+/* 7. Project Card Image Zooms & Sleek Outline */
+.project-card {
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(102, 126, 234, 0.08) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.18) !important;
+    border-color: #667eea !important;
+}
+
+.project-card .project-link {
+    display: block !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.project-card .project-link img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+}
+
+@media (max-width: 991.98px) {
+    .project-card .project-link img {
+        height: 180px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card .project-link img {
+        height: 160px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-card .project-link img {
+        height: 140px !important;
+    }
+}
+
+.project-card:hover .project-link img {
+    transform: scale(1.06) !important;
+}
+
+body.dark-mode .project-card {
+    border-color: rgba(184, 163, 255, 0.05) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25) !important;
+}
+
+body.dark-mode .project-card:hover {
+    border-color: #b8a3ff !important;
+    box-shadow: 0 20px 40px rgba(184, 163, 255, 0.15) !important;
+}
+
+.project-body {
+    padding: 25px !important;
+}
+
+.project-body h4 {
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+}
+
+/* 8. Floating Back To Top Button & Reading Progress Indicator */
+#backToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 999999;
+}
+
+#backToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTopBtn:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+#backToTopBtn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+body.dark-mode #backToTopBtn {
+    background: linear-gradient(135deg, #b8a3ff 0%, #764ba2 100%);
+    box-shadow: 0 6px 20px rgba(184, 163, 255, 0.25);
+}
+
+/* Top Progress Scroll Bar */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 100000;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f5576c);
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.5);
+    transition: width 0.1s ease;
+}
+
+body.dark-mode .scroll-progress-bar {
+    background: linear-gradient(90deg, #b8a3ff, #ec4899, #667eea);
+    box-shadow: 0 2px 10px rgba(184, 163, 255, 0.5);
+}
+
+/* 9. Responsive adjustments */
+@media (max-width: 768px) {
+    .About .image-contain img {
+        width: 260px !important;
+        height: 260px !important;
+    }
+    #backToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .About .image-contain img {
+        width: 210px !important;
+        height: 210px !important;
+    }
 }

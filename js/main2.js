@@ -43,40 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setThemeIcon(isDark);
 });
 
-// Legacy contact message handler.
-const oldMessageBtn = document.querySelector("#massege");
-if (oldMessageBtn) {
-  oldMessageBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    const form = document.querySelector("form");
-
-    if (!form.checkValidity()) {
-      Swal.fire({
-        icon: "warning",
-        title: "Please fill all fields",
-        text: "Make sure to fill all required fields correctly",
-        confirmButtonColor: "#667eea",
-      });
-      return;
-    }
-
-    Swal.fire({
-      icon: "success",
-      title: "Message Sent Successfully!",
-      text: "Thank you for your message. I'll get back to you soon!",
-      showConfirmButton: true,
-      confirmButtonColor: "#667eea",
-      timer: 2000,
-    });
-
-    setTimeout(() => {
-      form.reset();
-    }, 500);
-  });
-}
-
-// Smooth scroll for page links.
+// Smooth scroll for in-page links.
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -89,6 +56,48 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// Close mobile menu after clicking a nav link.
+const navbarCollapse = document.getElementById("navbarSupportedContent");
+const navbarToggler = document.querySelector(".navbar-toggler");
+
+if (navbarCollapse && navbarToggler) {
+  navbarCollapse.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      if (navbarCollapse.classList.contains("show")) {
+        navbarToggler.click();
+      }
+    });
+  });
+}
+
+// Scroll progress bar and back-to-top button.
+const backToTopBtn = document.getElementById("backToTopBtn");
+const scrollProgress = document.getElementById("scrollProgress");
+
+function updateScrollUI() {
+  const scrollTop = window.scrollY;
+  const docHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+  if (scrollProgress) {
+    scrollProgress.style.width = `${progress}%`;
+  }
+
+  if (backToTopBtn) {
+    backToTopBtn.classList.toggle("show", scrollTop > 400);
+  }
+}
+
+window.addEventListener("scroll", updateScrollUI, { passive: true });
+updateScrollUI();
+
+if (backToTopBtn) {
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 // Reveal cards while scrolling.
 const observerOptions = {
