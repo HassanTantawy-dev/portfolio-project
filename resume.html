@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume | Hassan Tantawy</title>
+    <meta name="description" content="Resume of Hassan Tantawy — full-stack web developer." />
+    <style>
+        :root {
+            --bg: #eef1f7;
+            --panel: #ffffff;
+            --text: #16213a;
+            --muted: #5b6780;
+            --accent: #2563eb;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0b1220;
+                --panel: #131c2e;
+                --text: #e6ecf8;
+                --muted: #93a1bb;
+                --accent: #7aa2ff;
+            }
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0 1rem 3rem;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0.9rem 0;
+            background: var(--bg);
+        }
+
+        header .title {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.2px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        #pages {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .page {
+            background: var(--panel);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(10, 20, 40, 0.12);
+        }
+
+        .page canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .status {
+            max-width: 900px;
+            margin: 2rem auto;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .status a { font-weight: 600; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span class="title">Hassan Tantawy — Resume</span>
+        <nav>
+            <a href="index.html">← Portfolio</a>
+            <a href="Hassan_Tantawy_CV.pdf" download>Download PDF</a>
+        </nav>
+    </header>
+
+    <p class="status" id="status">Loading resume…</p>
+    <div id="pages"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        (function () {
+            var statusEl = document.getElementById('status');
+            var pagesEl = document.getElementById('pages');
+            var PDF_URL = 'Hassan_Tantawy_CV.pdf';
+
+            function fallback(message) {
+                statusEl.innerHTML = message + ' <a href="' + PDF_URL + '">Open the PDF</a>.';
+            }
+
+            if (typeof pdfjsLib === 'undefined') {
+                fallback('Could not load the viewer.');
+                return;
+            }
+
+            pdfjsLib.GlobalWorkerOptions.workerSrc =
+                'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+            pdfjsLib.getDocument(PDF_URL).promise.then(function (pdf) {
+                statusEl.style.display = 'none';
+                var chain = Promise.resolve();
+
+                for (var n = 1; n <= pdf.numPages; n++) {
+                    (function (pageNumber) {
+                        chain = chain.then(function () {
+                            return pdf.getPage(pageNumber).then(function (page) {
+                                var wrap = document.createElement('div');
+                                wrap.className = 'page';
+
+                                var scale = Math.min(2, Math.max(1, window.devicePixelRatio || 1)) * 1.4;
+                                var viewport = page.getViewport({ scale: scale });
+                                var canvas = document.createElement('canvas');
+                                canvas.width = viewport.width;
+                                canvas.height = viewport.height;
+
+                                wrap.appendChild(canvas);
+                                pagesEl.appendChild(wrap);
+
+                                return page.render({
+                                    canvasContext: canvas.getContext('2d'),
+                                    viewport: viewport
+                                }).promise;
+                            });
+                        });
+                    })(n);
+                }
+            }).catch(function () {
+                fallback('The inline viewer is unavailable.');
+            });
+        })();
+    </script>
+</body>
+
+</html>
